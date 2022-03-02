@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Lab1Bai2 {
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("--------Hình chữ nhật-------");
+		System.out.print("Chiều dài là ");
+		double dai= scanner.nextDouble();
+		System.out.print("Chiều rộng là ");
+		double rong= scanner.nextDouble();
+		double chuvi= (dai+rong)*2;
+		double dientich= dai * rong;
+		double canhNhoNhat=Math.min(dai,rong);
+		System.out.printf("Chu vi là %.1f ",chuvi);
+		System.out.printf("Diện tích là %.1f ",dientich);
+		System.out.printf("Cạnh nhỏ nhất là %.1f ",canhNhoNhat);
+	}
+}
