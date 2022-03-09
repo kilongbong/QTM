@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+public class Lab2Bai4 {
+
+	public static void main(String[] args) {
+		menu();
+	}
+	public static void giaiPTB1() {
+	Scanner sc= new Scanner(System.in);
+	double a,b,x;
+	System.out.println("Nhap a");
+	a= sc.nextDouble();
+	System.out.println("Nhap b");
+	b= sc.nextDouble();
+	if (a==0) {
+		if(b==0) {
+			System.out.println("Vo so nghiem");
+		} else {
+			System.out.println("Vo nghiem");
+		}
+		}	else {
+		x=-b/a;
+		System.out.println("x=" + x);
+		}
+	}
+	public static void giaiPTB2() {
+		Scanner scanner = new Scanner(System.in);
+		float a,b,c;
+		System.out.println("Nhap a: ");
+		a= scanner.nextFloat();
+		System.out.println("Nhap b: ");
+		b= scanner.nextFloat();
+		System.out.println("Nhap c: ");
+		c= scanner.nextFloat();
+		if (a==0) {
+			System.out.println("Giai phuong trinh bac 1");
+		} else {
+			float delta =(float) Math.pow(b,2)- 4 * a*c ;
+			if(delta <0) {
+				System.out.println("Phuong trinh vo nghiem");
+			} else if(delta ==0) {
+				float x=-b/2 *a;
+				System.out.println("Phuong trinh co nghiem kep: " + x);
+			} else {
+				System.out.println("Phuong trinh co hai nghiem phan biet: ");
+				float x1 = (-b +(float) Math.sqrt(delta))/2 *a;
+				float x2 = (-b -(float) Math.sqrt(delta))/2 *a;
+				System.out.printf("Nghiem x1: %.2f \n", x1);
+				System.out.printf("Nghiem x2: %.2f \n", x2);
+			}
+		}
+	}
+	public static void tinhTienDien() {
+		float soDien;
+		float tienDien;
+		Scanner scanner= new Scanner(System.in);
+		System.out.print("Nhap so dien: ");
+		soDien= scanner.nextFloat();
+		if (soDien <= 50) {
+			tienDien=soDien *1000;
+		}else {
+			tienDien= 50*1000 + (soDien-50) *1200;
+		}
+		System.out.printf("Tien dien: %f", tienDien);
+	}
+	public static void menu(){
+		Scanner sc= new Scanner(System.in);
+		System.out.println("+------------------------+");
+		System.out.println("1. Giai phuong trinh bac 1");
+		System.out.println("2. Giai phuong trinh bac 2");
+		System.out.println("3. Tinh tien dien");
+		System.out.println("4. Ket thuc");
+		System.out.println("+------------------------+");
+		System.out.print("Ban chon chuc nang: ");
+		int choice = sc.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("Giai phuong trinh bac 1");
+			giaiPTB1();
+			break;
+		case 2:
+			System.out.println("Giai phuong trinh bac 2");
+			giaiPTB2();
+			break;
+		case 3:
+			System.out.println("Tinh tien dien");
+			tinhTienDien();
+			break;
+		case 4:
+			System.out.println("Ket thuc");
+			System.exit(0);
+			break;
+		}
+	}
+}
