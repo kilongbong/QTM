@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Lab3Bai4 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int soLuong;
+		
+		System.out.print("Nhap vao so luong sinh vien: ");
+		soLuong=Integer.parseInt(scanner.nextLine());
+		String[] hoTen = new String[soLuong];
+		double[] diem= new double[soLuong];
+		for (int i=0; i<soLuong; i++) {
+			System.out.printf("Nhap thong tin sinh vien thu %d \n", i+1);
+			System.out.printf("Ho ten: ");
+			hoTen[i]=scanner.nextLine();
+			System.out.printf("Nhap diem:" );
+			diem[i]= Double.parseDouble(scanner.nextLine());
+		}
+		xuatThongTin(hoTen,diem,soLuong);
+		scanner.close();
+	}
+	public static void xuatThongTin(String[] hoTen, double[] diem, int n) {
+		for (int i=0; i<n;i++) {
+			System.out.printf("Ho ten: %s \n", hoTen[i]);
+			System.out.printf("Diem: %.1f \n", diem[i]);
+			if (diem[i] >=9) System.out.println("Hoc luc xuat sac");
+			else if (diem[i] >=7.5) System.out.println("Hoc luc gioi");
+			else if (diem[i] >=6.5) System.out.println("Hoc luc kha");
+			else if (diem[i] >=5) System.out.println("Hoc luc trung binh");
+			else System.out.println("Hoc luc yeu");
+			System.out.println();
+		}
+	}
+}
