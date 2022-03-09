@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class SanPham {
+	String tenSP;
+	double donGia;
+	double giamGia;
+	double getThueNhapKhau() {
+		return donGia * 0.1;
+	}
+	void Xuat() {
+		System.out.printf("Ten San Pham: %s | Don Gia %f | Giam Gia %f | Thue Nhap Khau %f",
+				tenSP,donGia,giamGia,getThueNhapKhau());
+	}
+	void nhap() {
+		Scanner s= new Scanner(System.in);
+		System.out.print("Nhap ten san pham: ");
+		tenSP= s.nextLine();
+		System.out.print("Nhap ten san pham: ");
+		donGia = s.nextDouble();
+		System.out.print("Nhap ten san pham: ");
+		giamGia = s.nextDouble();
+	}
+}
